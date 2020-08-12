@@ -1,0 +1,39 @@
+.social__medias{
+    width: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.contact__medias{
+    width: 80%;
+    height: 35px;
+    color:white;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+}
+select{
+    background: grey;
+    color:white;
+    border: 1px solid white;
+}
+
+.MuiSvgIcon-root{
+    margin-left:15px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+}
+.contact__phone{
+    display: flex;
+    align-items: center;
+    color:white;
+    border-left: 1px solid white;
+    padding-right: 60px;
+}
+.contact__phone p {
+    padding-left: 10px;
+}

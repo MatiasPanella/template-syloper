@@ -1,5 +1,6 @@
 .products{
     margin-top:80px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 70px ;
 }

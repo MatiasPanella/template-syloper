@@ -22,7 +22,7 @@ select{
 .MuiSvgIcon-root{
     margin-left:15px;
 }
-a{
+.links a{
     color: white;
     text-decoration: none;
     padding-left: 10px;

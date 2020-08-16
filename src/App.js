@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SocialMedias from "./components/SocialMedias/SocialMedias";
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 
 
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -19,6 +20,7 @@ const App = () => {
           <Route exact path="/product" component={ProductItem}/>
           </Switch>
         </Suspense>
+        <Footer />
       </Router>
     </>
   );

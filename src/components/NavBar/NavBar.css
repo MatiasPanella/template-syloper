@@ -6,12 +6,12 @@
   justify-content: center;
   align-items: center;
 }
-ul {
+.nav-bar ul {
   list-style: none;
   display: flex;
   flex-direction: row nowrap;
 }
-li{
+.nav-bar ul li{
     background:red;
     color: white;
     display: flex;

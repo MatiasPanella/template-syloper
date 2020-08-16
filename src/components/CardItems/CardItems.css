@@ -1,12 +1,16 @@
-.container{
+.card__container{
     display: flex;
-    padding-left: 70px;
+    
 
 }
 .row{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .col-sm{
     padding-right: 20px;
+    padding-top: 20px;
+    width: 25%;
+    height:20% ;
 }

@@ -4,3 +4,15 @@
     justify-content: space-between;
     padding: 0 70px ;
 }
+.container{
+    width: 100%;
+    display: flex;
+    padding-left: 70px;
+}
+.card__container{
+    width: 80%;
+}
+.categories {
+    width: 20%;
+    float: right;
+}

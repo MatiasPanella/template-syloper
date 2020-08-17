@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -8,21 +8,92 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import "./CardItems.css";
-import Modal from 'react-modal'
+import Modal from "react-modal";
+import { Link } from "react-router-dom";
 
 const CardItems = () => {
+  const [datos, setDatos] = useState([
+    {
+      nombre: "Sensor Termico",
+      desc: "Este sensor termico sirve para realizar mediciones, etc, etc...",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU",
+      id: 1,
+      price: "20.000",
+    },
+    {
+      nombre: "Sensor Foto Electrico",
+      desc: "Este sensor termico sirve para realizar mediciones, etc, etc...",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU",
+      id: 2,
+      price: "30.000",
+    },
+    {
+      nombre: "Sensor Optico",
+      desc: "Este sensor termico sirve para realizar mediciones, etc, etc...",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU",
+      id: 3,
+      price: "25.000",
+    },
+    {
+      nombre: "Sensor de Proximidad",
+      desc: "Este sensor termico sirve para realizar mediciones, etc, etc...",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU",
+      id: 4,
+      price: "18.500",
+    },
+    {
+      nombre: "Sensor Infrarrojo",
+      desc: "Este sensor termico sirve para realizar mediciones, etc, etc...",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU",
+      id: 5,
+      price: "32.750",
+    },
+    {
+      nombre: "Sensor Infrarrojo",
+      desc: "Este sensor termico sirve para realizar mediciones, etc, etc...",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU",
+      id: 6,
+      price: "21.150",
+    },
+    {
+      nombre: "Sensor Infrarrojo",
+      desc: "Este sensor termico sirve para realizar mediciones, etc, etc...",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU",
+      id: 7,
+      price: "32.000",
+    },
+    {
+      nombre: "Sensor Infrarrojo",
+      desc: "Este sensor termico sirve para realizar mediciones, etc, etc...",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU",
+      id: 8,
+      price: "34.520",
+    },
+  ]);
+
+  localStorage.setItem("productos", JSON.stringify(datos));
+
+  var data = JSON.parse(localStorage.getItem("productos"));
+
   const useStyles = makeStyles({
     root: {
       maxWidth: 345,
-      textAlign:'center'
+      textAlign: "center",
     },
     media: {
       height: 140,
     },
   });
 
-
-  const [modalIsOpen, setModalIsOpen]= useState(false)
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const classes = useStyles();
 
@@ -30,147 +101,56 @@ const CardItems = () => {
     <>
       <div className="card__container">
         <div className="row">
-          <div className="col-sm">
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2" type=" button" onClick={()=>setModalIsOpen(true)}>
-                    Sensor
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  COMPRAR
-                </Button>
-              </CardActions>
-            </Card>
-          </div>
-        
-          <div className="col-sm">
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2" type=" button" onClick={()=>setModalIsOpen(true)}>
-                    Sensor
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  COMPRAR
-                </Button>
-              </CardActions>
-            </Card>
-          </div>
-
-          <div className="col-sm">
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2" type=" button" onClick={()=>setModalIsOpen(true)}>
-                    Sensor
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  COMPRAR
-                </Button>
-              </CardActions>
-            </Card>
-          </div>
-
-          <div className="col-sm">
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2" type=" button" onClick={()=>setModalIsOpen(true)}>
-                    Sensor
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  COMPRAR
-                </Button>
-              </CardActions>
-            </Card>
-          </div>
-
-          <div className="col-sm">
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2" type=" button" onClick={()=>setModalIsOpen(true)}>
-                    Sensor
-                  </Typography>
-                  <p style={{color:'grey'}}>$10.000</p>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Comprar
-                </Button>
-              </CardActions>
-            </Card>
-          </div>
-
-          <div className="col-sm">
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRakyTTe29wQQ2nOEUEYyaOhJwGqMuKI_qyCw&usqp=CAU"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2" type=" button" onClick={()=>setModalIsOpen(true)}>
-                    Sensor
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                
-                <Button size="small" color="primary">
-                  Comprar
-                </Button>
-              </CardActions>
-            </Card>
+         
+            {data.length != 0
+              ? data.map((dat) => {
+                  return (
+                    <div className="col-sm">
+                    <Card className={classes.root}>
+                      <CardActionArea>
+                        <CardMedia
+                          className={classes.media}
+                          image={dat.image}
+                          title="Contemplative Reptile"
+                        />
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="h2"
+                            type=" button"
+                            onClick={() => setModalIsOpen(true)}
+                          >
+                            {dat.nombre}
+                          </Typography>
+                          <p style={{ color: "grey" }}>{dat.price}</p>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <Button size="small" color="primary" id={dat.id}>
+                          <Link to="/product">COMPRAR</Link>
+                        </Button>
+                      </CardActions>
+                    </Card>
+                    </div>
+                  );
+                })
+              : null}
           </div>
         </div>
-      </div>
-      <Modal isOpen={modalIsOpen}>
-            <h2>Title</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <button onClick={() => setModalIsOpen(false)}> Cerrar </button>
-          </Modal>
+      
 
+      {data.length != 0
+        ? data.map((dat) => {
+            return (
+              <Modal isOpen={modalIsOpen}>
+                <h2>{dat.nombre}</h2>
+                <p>{dat.desc}</p>
+                <button onClick={() => setModalIsOpen(false)}> Cerrar </button>
+              </Modal>
+            );
+          })
+        : null}
     </>
   );
 };

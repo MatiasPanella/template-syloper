@@ -5,8 +5,10 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 
 
+
 const Home = lazy(() => import('./pages/Home/Home'));
 const ProductItem = lazy(() => import('./pages/ProductItem/ProductItem'));
+const Carrito = lazy(() => import('./pages/Carrito/Carrito'));
 
 const App = () => {
   return (
@@ -18,6 +20,7 @@ const App = () => {
           <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/product" component={ProductItem}/>
+          <Route exact path="/carrito" component={Carrito}/>
           </Switch>
         </Suspense>
         <Footer />

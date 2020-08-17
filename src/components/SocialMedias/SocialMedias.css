@@ -12,6 +12,12 @@
     display: flex;
     align-items: center;
     padding-left: 60px;
+
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 select{
     background: grey;
